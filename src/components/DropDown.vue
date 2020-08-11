@@ -8,10 +8,14 @@
     </div>
     <div  v-if="showProducts" class="drop-down-container-wrapper">
       <DropDownItem class="drop-down-container-item-title" title-init="Features" :drop-down-container-items="featuresDropDown"/>
-      <DropDownItem class="drop-down-container-item-title" title-init="Use Cases" :drop-down-container-items="UseCasesDropDown"/>
+      <DropDownItem class="drop-down-container-item-title" title-init="Use Cases" :drop-down-container-items="useCasesDropDown"/>
       <DropDownItem class="drop-down-container-item-title" title-init="Integrations" />
     </div>
-    <div></div>
+    <div v-if="showResources" class="drop-down-container-wrapper">
+      <DropDownItem class="drop-down-container-item-title" title-init="Blog" :drop-down-container-items="blogDropDown"/>
+      <DropDownItem class="drop-down-container-item-title" title-init="Documentation" :drop-down-container-items="documentationDropDown"/>
+      <DropDownItem class="drop-down-container-item-title" title-init="Other resources" :drop-down-container-items="otherResourcesDropDown" />
+    </div>
   </div>
 </template>
 
@@ -44,8 +48,12 @@ export default {
       name: this.nameInit,
       state: this.stateInit,
       featuresDropDown: ["Collect Feedback", "Analyze Feedback", "Plan Road Map", "Share Updates"],
-      UseCasesDropDown: ["Feature Request Tracking", "Idea Management", "Internal Feedback", "Product Management",
-      "Sales", "Public Roadmap"],
+      useCasesDropDown: ["Feature Request Tracking", "Idea Management", "Internal Feedback", "Product Management",
+        "Sales", "Public Roadmap"],
+      blogDropDown : ["Founder Stories", "Building SaaS", "Customer Feedback", "Product Management",
+        "Canny Best Practices"],
+      documentationDropDown: ["Install Canny", "API Docs"],
+      otherResourcesDropDown: ["Help Center", "Feedback", "Security"],
       dropDownButton: this.dropDownButtonInit
     }
   }
@@ -53,8 +61,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .drop-down-container-wrapper {
+    display: none;
+    position: absolute;
+    top: 50px;
+    border: 1px solid #cbcbce;
+    border-radius: 4px;
+    background-color: white;
+  }
   .drop-down-container-item-title {
-    border-top: 1px solid black;
+    border-top: 1px solid #cbcbce;
     cursor: pointer;
     color: #666667;
   }
@@ -65,6 +81,11 @@ export default {
     display: flex;
     flex-direction: row;
     align-items: center;
+  }
+  .drop-down-wrapper:hover .drop-down-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: black;
   }
   .drop-down-button-wrapper {
     font-size: 12px;
@@ -87,13 +108,5 @@ export default {
   .down-arrow-image {
     height: 100%;
     margin-left: 6px;
-  }
-  .drop-down-container-wrapper {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    border: 1px solid #cbcbce;
-    border-radius: 4px;
   }
 </style>

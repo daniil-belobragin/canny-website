@@ -2,9 +2,9 @@
   <div class="navigation-bar">
     <HomeButton />
     <div class="drop-down-menu">
-      <DropDown name-init="PRODUCT" state-init="true" drop-down-button-init='product'/>
+      <DropDown name-init="PRODUCT" state-init="true" drop-down-button-init="product"/>
       <DropDown name-init="PRICING" />
-      <DropDown name-init="RESOURCES" state-init="true"/>
+      <DropDown name-init="RESOURCES" state-init="true" drop-down-button-init="resources"/>
       <DropDown name-init="CASE STUDIES" />
     </div>
   </div>
