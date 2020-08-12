@@ -7,14 +7,14 @@
       </div>
     </button>
     <div  v-if="showProducts" class="drop-down-container-wrapper">
-      <DropDownItem class="drop-down-container-item-title" title-init="Features" :drop-down-container-items="featuresDropDown"/>
-      <DropDownItem class="drop-down-container-item-title" title-init="Use Cases" :drop-down-container-items="useCasesDropDown"/>
-      <DropDownItem class="drop-down-container-item-title" title-init="Integrations" />
+      <drop-down-item class="drop-down-container-item-title" title-init="Features" :drop-down-container-items="featuresDropDown"/>
+      <drop-down-item class="drop-down-container-item-title" title-init="Use Cases" :drop-down-container-items="useCasesDropDown"/>
+      <drop-down-item class="drop-down-container-item-title" title-init="Integrations" />
     </div>
     <div v-if="showResources" class="drop-down-container-wrapper">
-      <DropDownItem class="drop-down-container-item-title" title-init="Blog" :drop-down-container-items="blogDropDown"/>
-      <DropDownItem class="drop-down-container-item-title" title-init="Documentation" :drop-down-container-items="documentationDropDown"/>
-      <DropDownItem class="drop-down-container-item-title" title-init="Other resources" :drop-down-container-items="otherResourcesDropDown" />
+      <drop-down-item class="drop-down-container-item-title" title-init="Blog" :drop-down-container-items="blogDropDown"/>
+      <drop-down-item class="drop-down-container-item-title" title-init="Documentation" :drop-down-container-items="documentationDropDown"/>
+      <drop-down-item class="drop-down-container-item-title" title-init="Other resources" :drop-down-container-items="otherResourcesDropDown" />
     </div>
   </div>
 </template>
@@ -28,6 +28,9 @@ export default {
     nameInit: {
       required: true
     },
+    isUpperCase: {
+      default: false
+    },
     stateInit: {
       default: false
     },
@@ -35,17 +38,22 @@ export default {
       default: ''
     }
   },
+  mounted () {
+    console.log(typeof(this.stateInit))
+  },
   computed: {
-    showProducts: function () {
+    name () {
+      return this.isUpperCase ? this.nameInit.toUpperCase() : this.nameInit
+    },
+    showProducts () {
       return this.state && this.dropDownButton === 'product'
     },
-    showResources: function () {
+    showResources () {
       return this.state && this.dropDownButton === 'resources'
     }
   },
   data () {
     return {
-      name: this.nameInit,
       state: this.stateInit,
       featuresDropDown: ["Collect Feedback", "Analyze Feedback", "Plan Road Map", "Share Updates"],
       useCasesDropDown: ["Feature Request Tracking", "Idea Management", "Internal Feedback", "Product Management",
@@ -67,6 +75,7 @@ export default {
     top: 50px;
     border: 1px solid #cbcbce;
     border-radius: 4px;
+    background: white;
   }
   .drop-down-container-item-title {
     border-top: 1px solid #cbcbce;

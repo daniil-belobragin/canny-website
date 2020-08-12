@@ -1,15 +1,15 @@
 <template>
   <div class="navigation-bar">
-    <HomeButton />
+    <home-button />
     <div class="drop-down-menu">
-      <DropDown name-init="PRODUCT" state-init="true" drop-down-button-init="product"/>
-      <DropDown name-init="PRICING" />
-      <DropDown name-init="RESOURCES" state-init="true" drop-down-button-init="resources"/>
-      <DropDown name-init="CASE STUDIES" />
+      <drop-down name-init="product" :state-init="true" :is-upper-case="true" drop-down-button-init="product"/>
+      <drop-down name-init="pricing" :is-upper-case="true" />
+      <drop-down name-init="resources" :state-init="true" :is-upper-case="true" drop-down-button-init="resources"/>
+      <drop-down name-init="case studies" :is-upper-case="true" />
     </div>
     <div class="action-menu">
-      <LogInButton />
-      <DemoButton />
+      <log-in-button />
+      <demo-button />
     </div>
   </div>
 </template>
