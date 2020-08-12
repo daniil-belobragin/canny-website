@@ -3,7 +3,7 @@
     <button class="drop-down-button-wrapper">
       <span class="drop-down-button">{{ name }}</span>
       <div class="down-arrow-image-wrapper">
-        <img class="down-arrow-image" src="../assets/down-arrow.svg" v-if="state"  alt="down-arrow">
+        <img class="down-arrow-image" src="../assets/image/down-arrow.svg" v-if="state"  alt="down-arrow">
       </div>
     </button>
     <div  v-if="showProducts" class="drop-down-container-wrapper">
@@ -37,9 +37,6 @@ export default {
     dropDownButtonInit: {
       default: ''
     }
-  },
-  mounted () {
-    console.log(typeof(this.stateInit))
   },
   computed: {
     name () {

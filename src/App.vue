@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <HomeScreen/>
+    <home-screen/>
   </div>
 </template>
 
@@ -16,9 +16,9 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "src/assets/style/style";
+  @import "./assets/style/style.css";
+
   #wrapper {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
     text-align: center;
     color: #2c3e50;
     width: 100%;

@@ -1,16 +1,16 @@
 <template>
   <div class="home-screen">
-    <Header/>
-    <img alt="Vue logo" src="../assets/logo.png">
+    <header-block />
+    <img alt="Vue logo" src="../assets/image/logo.png">
   </div>
 </template>
 
 <script>
-import Header from '../components/Header';
+import HeaderBlock from "../components/HeaderBlock";
 
 export default {
   name: "HomeScreen",
-  components: {Header}
+  components: {HeaderBlock}
 }
 </script>
 

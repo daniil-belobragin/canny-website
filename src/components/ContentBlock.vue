@@ -1,12 +1,11 @@
 <template>
   <div class="content-wrapper" :style="textLocation">
     <slot name="text">
-      <slot name="title" />
+      <slot name="title"/>
       <slot name="paragraph" />
       <slot name="button" />
     </slot>
     <slot name="image" />
-
   </div>
 </template>
 
@@ -30,6 +29,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+
   .content-wrapper {
     width: 100%;
     display: flex;
@@ -37,10 +37,5 @@ export default {
     justify-content: space-between;
     align-items: center;
   }
-  .text {
-  }
-  .image {
-    width: 400px;
-    height: 600px;
-  }
+
 </style>
