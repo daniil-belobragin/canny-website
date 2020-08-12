@@ -16,6 +16,7 @@
     color: #5379ff;
   }
   .button-wrapper {
+    height: 100%;
     border: none;
     outline: none;
     cursor: pointer;

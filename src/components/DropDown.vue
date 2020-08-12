@@ -1,11 +1,11 @@
 <template>
   <div class="drop-down-wrapper">
-    <div class="drop-down-button-wrapper">
+    <button class="drop-down-button-wrapper">
       <span class="drop-down-button">{{ name }}</span>
       <div class="down-arrow-image-wrapper">
         <img class="down-arrow-image" src="../assets/down-arrow.svg" v-if="state"  alt="down-arrow">
       </div>
-    </div>
+    </button>
     <div  v-if="showProducts" class="drop-down-container-wrapper">
       <DropDownItem class="drop-down-container-item-title" title-init="Features" :drop-down-container-items="featuresDropDown"/>
       <DropDownItem class="drop-down-container-item-title" title-init="Use Cases" :drop-down-container-items="useCasesDropDown"/>
@@ -67,7 +67,6 @@ export default {
     top: 50px;
     border: 1px solid #cbcbce;
     border-radius: 4px;
-    background-color: white;
   }
   .drop-down-container-item-title {
     border-top: 1px solid #cbcbce;
@@ -85,16 +84,18 @@ export default {
   .drop-down-wrapper:hover .drop-down-container-wrapper {
     display: flex;
     flex-direction: column;
-    background: black;
   }
   .drop-down-button-wrapper {
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 11px;
+    font-weight: 600;
     color: #9c9c9f;
     display: flex;
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
   }
   .drop-down-button-wrapper:hover {
     filter: brightness(85%);

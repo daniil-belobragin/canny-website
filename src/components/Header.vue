@@ -29,7 +29,11 @@ export default {
     border-bottom: 1px solid #d1d3d6;
     }
   .header-wrapper {
-    width: 60%;
+    width: 90%;
+    max-width: 1100px;
     height: 736px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>
