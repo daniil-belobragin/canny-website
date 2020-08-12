@@ -6,7 +6,6 @@
       <slot name="button" />
     </slot>
     <slot name="image" />
-
   </div>
 </template>
 
