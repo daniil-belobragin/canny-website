@@ -12,16 +12,18 @@
 <script>
 export default {
   name: "DropDownItem",
-  data () {
-    return {
-      title: this.titleInit,
-    }
-  },
+
   props: {
     titleInit: {
       required: true
     },
     dropDownContainerItems: Array
+  },
+
+  data () {
+    return {
+      title: this.titleInit
+    }
   }
 }
 </script>

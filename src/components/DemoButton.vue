@@ -1,12 +1,22 @@
 <template>
   <button class="demo-button-wrapper">
-    <span class="demo-button">REQUEST A DEMO</span>
+    <span class="demo-button">{{ demoButton }}</span>
   </button>
 </template>
 
 <script>
 export default {
-name: "DemoButton"
+  name: "DemoButton",
+
+  data () {
+    return {
+      demoButton: "request a demo"
+    }
+  },
+
+  mounted() {
+    this.demoButton = this.demoButton.toUpperCase()
+  }
 }
 </script>
 

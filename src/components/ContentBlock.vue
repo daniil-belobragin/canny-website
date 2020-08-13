@@ -6,17 +6,20 @@
       <slot name="button" />
     </slot>
     <slot name="image" />
+    <slot name="links" />
   </div>
 </template>
 
 <script>
 export default {
   name: "ContentBlock",
+
   props: {
     textLocationInit: {
       default: "row-reverse"
     }
   },
+
   computed: {
     textLocation () {
       return {
@@ -36,6 +39,7 @@ export default {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    padding-top: 60px;
   }
 
 </style>

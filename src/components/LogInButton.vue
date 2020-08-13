@@ -1,12 +1,22 @@
 <template>
   <button class="login-button-wrapper">
-    <span class="login-button">LOG IN</span>
+    <span class="login-button">{{ logInButton }}</span>
   </button>
 </template>
 
 <script>
 export default {
-  name: "LogInButton"
+  name: "LogInButton",
+
+  data () {
+    return{
+      logInButton: "log in"
+    }
+  },
+
+  mounted() {
+    this.logInButton = this.logInButton.toUpperCase()
+  }
 }
 </script>
 
