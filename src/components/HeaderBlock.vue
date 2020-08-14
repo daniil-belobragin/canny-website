@@ -79,7 +79,6 @@ export default {
     max-width: 1200px;
     padding: 0 30px;
     box-sizing: border-box;
-    height: 736px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +86,6 @@ export default {
 
 .header {
     width: 100%;
-    height: 736px;
     background: white;
     display: flex;
     flex-direction: column;
@@ -100,6 +98,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 60px;
+    padding-bottom: 80px;
   }
 
   .text-wrapper {
@@ -120,8 +120,9 @@ export default {
     font-size: 18px;
     text-align: left;
     margin-top: 20px;
-    padding-right: 30px;
+    padding-right: 35px;
     color: #666667;
+    font-weight: lighter;
   }
 
   .image-wrapper {

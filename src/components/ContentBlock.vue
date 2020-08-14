@@ -38,7 +38,6 @@ export default {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px;
   }
 
 </style>
