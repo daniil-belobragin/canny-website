@@ -37,6 +37,7 @@ export default {
   }
   .drop-down-container-title {
     padding: 12px;
+    font-weight: bold;
   }
   .drop-down-container-title:hover{
     filter: brightness(0%);

@@ -33,6 +33,7 @@ export default {
     border: 1px solid #cbcbce;
     border-radius: 4px;
     background: none;
+    outline: none;
   }
   .demo-button-wrapper:hover {
     border-color: #666667;

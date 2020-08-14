@@ -73,6 +73,7 @@ export default {
     border: 1px solid #cbcbce;
     border-radius: 4px;
     background: white;
+    font-size: 15px;
   }
   .drop-down-container-item-title {
     border-top: 1px solid #cbcbce;

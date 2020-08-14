@@ -1,5 +1,5 @@
 <template>
-  <button class="button-wrapper">
+  <button class="home-button-wrapper">
     <span class="home-button">Canny</span>
   </button>
 </template>
@@ -15,7 +15,7 @@
     font-size: 22px;
     color: #5379ff;
   }
-  .button-wrapper {
+  .home-button-wrapper {
     height: 100%;
     border: none;
     outline: none;
@@ -23,7 +23,7 @@
     background: none;
     padding: 0;
   }
-  .button-wrapper::-moz-focus-inner {
+  .home-button-wrapper::-moz-focus-inner {
     border: 0;
   }
 

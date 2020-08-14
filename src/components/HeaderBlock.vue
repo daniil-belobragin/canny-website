@@ -27,7 +27,21 @@
           </div>
         </content-block>
         <div class="logo-content-wrapper">
-
+          <logo-button>
+            <img src="../assets/image/ahrefs-logo.svg" alt="" slot="logo-button">
+          </logo-button>
+          <logo-button logo-style-init="24px">
+            <img src="../assets/image/compass-logo.svg" alt="" slot="logo-button">
+          </logo-button>
+          <logo-button logo-style-init="34px">
+            <img src="../assets/image/lyft_logo.svg" alt="" slot="logo-button">
+          </logo-button>
+          <logo-button logo-style-init="28px">
+            <img src="../assets/image/bench-logo.svg" alt="" slot="logo-button">
+          </logo-button>
+          <logo-button logo-style-init="38px">
+            <img src="../assets/image/clickup-logo.svg" alt="" slot="logo-button">
+          </logo-button>
         </div>
       </div>
     </div>
@@ -37,11 +51,12 @@
 <script>
 import NavigationBar from "./NavigationBar";
 import ContentBlock from "./ContentBlock";
+import LogoButton from "./LogoButton";
 
 export default {
   name: "HeaderBlock",
 
-  components: {ContentBlock, NavigationBar},
+  components: {LogoButton, ContentBlock, NavigationBar},
 
   data () {
     return {
@@ -123,7 +138,6 @@ export default {
 
   .image {
     width: 100%;
-    height: 100%;
     min-height: 350px;
   }
 
@@ -191,14 +205,13 @@ export default {
     color: #9c9c9f;
   }
 
-  .logo-wrapper {
+  .logo-content-wrapper {
     width: 100%;
-    margin-top: 40px;
-    height: 60px;
+    margin-top: 70px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
   }
-
 
 </style>
