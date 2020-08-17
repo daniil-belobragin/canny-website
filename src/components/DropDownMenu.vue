@@ -1,0 +1,62 @@
+<template>
+  <div class="drop-down-menu-wrapper">
+    <div class="drop-down-wrapper" v-bind:key="dropDownButton" v-for="dropDownButton in dropDownButtons">
+      <primary-button :label="dropDownButton.toUpperCase()" :is-drop-down="true"
+                      :icon="require('../assets/image/down.svg')" :with-icon="isActive(dropDownButton)" />
+      <drop-down v-if="dropDownButton === 'product'" :drop-down-list="productDropDownList" />
+      <drop-down v-if="dropDownButton === 'resources'" :drop-down-list="resourcesDropDownList" />
+    </div>
+  </div>
+</template>
+
+<script>
+import PrimaryButton from "./buttons/PrimaryButton";
+import DropDown from "./DropDown";
+export default {
+  name: "DropDownMenu",
+
+  components: {DropDown, PrimaryButton},
+
+  data () {
+    return {
+      dropDownButtons: ["product", "pricing", "resources", "case studies"],
+      productDropDownList: [
+          {section: {sectionTitle: "Features", sectionItems: ["Collect FeedBack", "Analyze Feedback", "Plan Roadmap", "Share Update"]}},
+          {section: {sectionTitle: "Use Cases", sectionItems: ["Feature Request Tracking", "Idea Management", "Internal Feedback", "Product Management", "Sales", "Public Roadmap"]}},
+          {section: {sectionTitle: "Integration", sectionItems: []}}
+      ],
+      resourcesDropDownList: [
+        {section: {sectionTitle: "Blog", sectionItems: ["Founder Stories", "Building SaaS", "Customer Feedback", "Product Management", "Canny Best Practices"]}},
+        {section: {sectionTitle: "Documentation", sectionItems: ["Install Canny", "API Docs"]}},
+        {section: {sectionTitle: "Other Resources", sectionItems: ["Help Center", "Feedback", "Security"]}}
+      ]
+    }
+  },
+
+  methods: {
+    isActive (label) {
+      return label === "product" || label === "resources"
+    }
+  },
+}
+</script>
+
+<style lang="scss">
+
+  .drop-down-menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .drop-down-wrapper {
+    padding: 15px;
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .drop-down-wrapper:hover > .drop-down {
+    visibility: visible;
+  }
+</style>
