@@ -35,7 +35,7 @@ export default {
     top: 50px;
     font-size: 15px;
     background: white;
-    border: 1px solid #888888;
+    border: 1px solid #dddddd;
     border-radius: 5px;
     box-sizing: border-box;
     color: #666666;
@@ -47,7 +47,7 @@ export default {
     flex-direction: column;
     justify-content: left;
     width: 100%;
-    border-top: 1px solid #888888;
+    border-top: 1px solid #dddddd;
   }
 
   .drop-down-section-wrapper:first-child {

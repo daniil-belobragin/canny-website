@@ -37,6 +37,7 @@ export default {
 
 <style scoped>
   .navigation-bar-wrapper {
+    padding-top: 15px;
     width: 100%;
     display: flex;
     flex-direction: row;
