@@ -1,0 +1,27 @@
+@keyframes pulse {
+  0% {
+    box-shadow:0 0 0 0 rgba(82, 93, 249, .5)
+  }
+  65% {
+    box-shadow:0 0 0 10px rgba(82, 93, 249, 0)
+  }
+  to {
+    box-shadow:0 0 0 0 rgba(82, 93, 249, 0)
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(0);
+    animation-timing-function: ease-in-out;
+  }
+
+  50% {
+    transform: translateY(3px);
+    -webkit-animation-timing-function: ease-in-out;
+  }
+  to {
+    transform: translate(0);
+    animation-timing-function: ease-in-out;
+  }
+}

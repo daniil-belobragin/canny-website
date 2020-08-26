@@ -1,12 +1,12 @@
 <template>
-  <div class="drop-down">
-    <div v-for="dropDownSection in dropDownList" :key="dropDownSection.id" class="drop-down-section-wrapper">
+  <ul class="drop-down">
+    <li v-for="dropDownSection in dropDownList" :key="dropDownSection.id" class="drop-down-section-wrapper">
       <primary-button class="drop-down-section-title" v-bind:class="{alone: isAlone(dropDownSection.section.sectionItems)}"
-                      :label="dropDownSection.section.sectionTitle" :is-drop-down-item-title="true" />
+                      :label="dropDownSection.section.sectionTitle" button-type="dropDownItemTitle" />
       <primary-button v-for="dropDownSectionItem in dropDownSection.section.sectionItems"
-                      :key="dropDownSectionItem.id" class="drop-down-section-item" :label="dropDownSectionItem" :is-drop-down-item="true"/>
-    </div>
-  </div>
+                      :key="dropDownSectionItem.id" class="drop-down-section-item" :label="dropDownSectionItem" button-type="dropDownItem"/>
+    </li>
+  </ul>
 </template>
 
 <script>

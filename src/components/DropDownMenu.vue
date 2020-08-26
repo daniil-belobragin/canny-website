@@ -1,12 +1,12 @@
 <template>
-  <div class="drop-down-menu-wrapper">
-    <div class="drop-down-wrapper" v-bind:key="dropDownButton" v-for="dropDownButton in dropDownButtons">
-      <primary-button :label="dropDownButton.toUpperCase()" :is-drop-down="true"
-                      :icon="require('../assets/image/down.svg')" :with-icon="isActive(dropDownButton)" />
-      <drop-down v-if="dropDownButton === 'product'" :drop-down-list="productDropDownList" />
-      <drop-down v-if="dropDownButton === 'resources'" :drop-down-list="resourcesDropDownList" />
-    </div>
-  </div>
+  <ul class="drop-down-menu-wrapper">
+    <li class="drop-down-wrapper" v-bind:key="dropDownButton" v-for="dropDownButton in dropDownButtons">
+      <primary-button :label="dropDownButton.toUpperCase()" button-type="dropDown"
+                      :path="require('../assets/image/down.svg')" :with-image="isActive(dropDownButton)" image-size="width11" />
+      <drop-down v-show="dropDownButton === 'product'" :drop-down-list="productDropDownList" />
+      <drop-down v-show="dropDownButton === 'resources'" :drop-down-list="resourcesDropDownList" />
+    </li>
+  </ul>
 </template>
 
 <script>

@@ -1,11 +1,9 @@
 <template>
   <div class="navigation-bar-wrapper">
-    <div class="logo-wrapper">
-      <primary-button label="Canny" :is-logo-button="true"/>
-    </div>
+    <primary-button label="Canny" button-type="logo"/>
     <drop-down-menu />
     <div class="sign-in-demo-buttons-wrapper">
-      <primary-button :label="logInButtonTitle" :is-drop-down="true" />
+      <primary-button :label="logInButtonTitle" button-type="dropDown" />
       <border-button :label="demoButtonTitle" button-type="demo"/>
     </div>
   </div>
@@ -37,7 +35,8 @@ export default {
 
 <style scoped>
   .navigation-bar-wrapper {
-    padding-top: 15px;
+    padding-top: 2px;
+    height: 70px;
     width: 100%;
     display: flex;
     flex-direction: row;

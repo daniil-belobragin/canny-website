@@ -1,25 +1,31 @@
 <template>
   <button class="border-button" v-bind:class="{demo: buttonType === 'demo', play: buttonType === 'play'}">
-    <img :src="icon" class="border-button-icon" v-show="withImage" alt="border-button-icon" />
     {{ label }}
+    <primary-image :path="path" v-show="withImage" :image-size="imageSize" />
   </button>
 </template>
 
 <script>
+import PrimaryImage from "../PrimaryImage";
 export default {
   name: "BorderButton",
-
+  components: {PrimaryImage},
   props: {
     label: {
       required: true
     },
     buttonType: {
-
+      type: String
     },
     withImage: {
       default: false
     },
-    icon: {}
+    path: {
+      type: String
+    },
+    imageSize: {
+      type: String
+    }
   }
 }
 </script>
@@ -54,13 +60,15 @@ export default {
 
   .play {
     @extend .border-button;
+    @import "../../assets/animation/animation";
 
-    border: 1px solid #525df9;
+    border: 2px solid #525df9;
     color: #525df9;
-    border-radius: 8px;
-  }
-
-  .primary-button-icon {
-    height: 11px;
+    border-radius: 100px;
+    padding: 8px 15px;
+    flex-direction: row-reverse;
+    background: white;
+    font-weight: 600;
+    animation: pulse 1.5s infinite;
   }
 </style>
