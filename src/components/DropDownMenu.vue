@@ -1,8 +1,11 @@
 <template>
   <ul class="drop-down-menu-wrapper">
     <li class="drop-down-wrapper" v-bind:key="dropDownButton" v-for="dropDownButton in dropDownButtons">
-      <primary-button :label="dropDownButton.toUpperCase()" button-type="dropDown"
-                      :path="require('../assets/image/down.svg')" :with-image="isActive(dropDownButton)" image-size="width11" />
+      <router-link class="link" :to="isActive(dropDownButton) ? '' : {name: dropDownButton}">
+        <primary-button :label="dropDownButton.toUpperCase()" button-type="dropDown"
+                        :path="require('../assets/image/down.svg')" :with-image="isActive(dropDownButton)" image-size="width11" />
+      </router-link>
+
       <drop-down v-show="dropDownButton === 'product'" :drop-down-list="productDropDownList" />
       <drop-down v-show="dropDownButton === 'resources'" :drop-down-list="resourcesDropDownList" />
     </li>
@@ -12,6 +15,7 @@
 <script>
 import PrimaryButton from "./buttons/PrimaryButton";
 import DropDown from "./DropDown";
+
 export default {
   name: "DropDownMenu",
 
@@ -42,6 +46,7 @@ export default {
 </script>
 
 <style lang="scss">
+  @import "../assets/style/style";
 
   .drop-down-menu-wrapper {
     display: flex;

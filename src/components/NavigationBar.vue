@@ -1,6 +1,8 @@
 <template>
   <div class="navigation-bar-wrapper">
-    <primary-button label="Canny" button-type="logo"/>
+    <router-link to="home" title="Canny" class="link">
+      <primary-button label="Canny" button-type="logo" />
+    </router-link>
     <drop-down-menu />
     <div class="sign-in-demo-buttons-wrapper">
       <primary-button :label="logInButtonTitle" button-type="dropDown" />
@@ -28,12 +30,13 @@ export default {
   mounted() {
     this.demoButtonTitle = this.demoButtonTitle.toUpperCase()
     this.logInButtonTitle = this.logInButtonTitle.toUpperCase()
-  }
-
+  },
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+  @import "../assets/style/style";
+
   .navigation-bar-wrapper {
     padding-top: 2px;
     height: 70px;
@@ -49,4 +52,5 @@ export default {
     flex-direction: row;
     align-items: center;
   }
+
 </style>

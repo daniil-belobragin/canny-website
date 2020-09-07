@@ -1,5 +1,6 @@
 <template>
-  <button class="filled-button" v-bind:class="{green: buttonColor === 'green', blue: buttonColor === 'blue'}">
+  <button class="filled-button" v-bind:class="{green: buttonColor === 'green', blue: buttonColor === 'blue',
+   black: buttonColor === 'black', pricingButton: buttonType === 'pricing'}">
     {{ label }}
   </button>
 </template>
@@ -14,6 +15,9 @@ export default {
     },
     buttonColor: {
       default: "green"
+    },
+    buttonType: {
+      default: ""
     }
   }
 }
@@ -41,5 +45,18 @@ export default {
 
   .green:hover {
     background: #7edb75;
+  }
+
+  .black {
+    background: #464856;
+  }
+
+  .black:hover {
+    background: #6b6d77;
+  }
+
+  .pricingButton {
+    font-size: 11px;
+    padding: 14px 16px;
   }
 </style>

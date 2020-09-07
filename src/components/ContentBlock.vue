@@ -1,14 +1,17 @@
 <template>
-  <div class="content-wrapper" v-bind:class="{revert: isRevert}">
-    <div class="text-content-wrapper">
-      <div class="title-wrapper" v-bind:class="{titleWidth600: titleWidth === '600px', titleWidth380: titleWidth === '380px'}">
+  <div class="content-wrapper" v-bind:class="{revert: isRevert, textOnly: onlyText}">
+    <div class="text-content-wrapper" v-bind:class="{maxWidth: onlyText, alignLeft: textAlign === 'left'}">
+      <div class="title-wrapper" v-bind:class="{titleWidth600: titleWidth === '600px',
+      titleWidth380: titleWidth === '380px', titleFontSize15: titleFontSize === '15px', maxWidth: onlyText}">
         <slot name="title" />
       </div>
       <div class="text-wrapper" v-bind:class="{textWidth500: textWidth === '500px', textWidth370: textWidth === '370px',
-      textWidth480: textWidth === '480px'}">
+      textWidth480: textWidth === '480px', textFontSize15: textFontSize === '15px', maxWidth: onlyText,
+      top5: topMargin === '5px'}">
         <slot name="text" />
       </div>
-      <div class="trial-wrapper" v-bind:class="{top20: topMargin === '20px', top10: topMargin === '10px'}">
+      <div class="trial-wrapper" v-bind:class="{top20: topMargin === '20px', top10: topMargin === '10px'}"
+           v-show="!onlyText">
         <slot name="trial-button" />
         <div class="trial-description-wrapper">
           <slot name="trial-description" />
@@ -33,6 +36,9 @@ export default {
     isRevert: {
       default: false
     },
+    onlyText: {
+      default: false
+    },
     withButton: {
       default: false
     },
@@ -45,12 +51,22 @@ export default {
     },
     textWidth: {
       type: String
+    },
+    titleFontSize: {
+      type: String
+    },
+    textFontSize: {
+      type: String
+    },
+    textAlign: {
+      type: String
     }
   }
 }
 </script>
 
 <style lang="scss">
+
   .content-wrapper {
     padding-top: 60px;
     width: 100%;
@@ -58,6 +74,14 @@ export default {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .textOnly {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .revert {
@@ -107,6 +131,11 @@ export default {
     max-width: 500px;
   }
 
+  .maxWidth {
+    max-width: 100%;
+    align-items: center;
+  }
+
   .trial-wrapper {
     margin-top: 40px;
   }
@@ -117,6 +146,10 @@ export default {
 
   .top10 {
     margin-top: 10px;
+  }
+
+  .top5 {
+    margin-top: 5px;
   }
 
   .trial-description-wrapper {
@@ -130,7 +163,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #efefef;
     border-radius: 10px;
     overflow: hidden;
   }
@@ -149,6 +181,18 @@ export default {
 
   .more-button-wrapper {
     position: absolute;
+  }
+
+  .titleFontSize15 {
+    font-size: 15px;
+  }
+
+  .textFontSize15 {
+    font-size: 15px;
+  }
+
+  .alignLeft {
+    align-items: flex-start;
   }
 
 </style>

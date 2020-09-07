@@ -10,7 +10,7 @@
 
 <script>
 
-import PrimaryImage from "@/components/PrimaryImage";
+import PrimaryImage from "../PrimaryImage";
 export default {
   name: "PrimaryButton",
   components: {PrimaryImage},
@@ -46,6 +46,7 @@ export default {
     padding: 0;
     cursor: pointer;
     box-sizing: border-box;
+    text-decoration: none;
   }
 
   .logo {

@@ -1,27 +1,29 @@
 <template>
-  <div class="footer-wrapper">
-    <div class="footer-info">
-      <logo-button :path="require('../assets/image/canny-logo.png')" logo="canny" image-size="widthMax"/>
-      <div class="text">
-        <span>© Canny 2020</span>
-        <div class="copyright-buttons">
-          <primary-button label="Privacy" button-type="copyright" />  ·
-          <primary-button label="Terms" button-type="copyright"/>  ·
-          <primary-button label="Security" button-type="copyright" />
+  <div class="footer">
+    <div class="footer-wrapper">
+      <div class="footer-info">
+        <logo-button :path="require('../assets/image/canny-logo.png')" logo="canny" image-size="widthMax"/>
+        <div class="text">
+          <span>© Canny 2020</span>
+          <div class="copyright-buttons">
+            <primary-button label="Privacy" button-type="copyright" />  ·
+            <primary-button label="Terms" button-type="copyright"/>  ·
+            <primary-button label="Security" button-type="copyright" />
+          </div>
         </div>
       </div>
-    </div>
 
-    <ul class="sections">
-      <li class="section" v-for="section in sections" :key="section.id">
-        <span class="section-title"> {{ section.title.toUpperCase() }}</span>
-        <ul class="section-buttons">
-          <li class="section-button" v-for="sectionButton in section.buttons" :key="sectionButton.id">
-            <primary-button :label="sectionButton" button-type="footerButton" />
-          </li>
-        </ul>
-      </li>
-    </ul>
+      <ul class="sections">
+        <li class="section" v-for="section in sections" :key="section.id">
+          <span class="section-title"> {{ section.title.toUpperCase() }}</span>
+          <ul class="section-buttons">
+            <li class="section-button" v-for="sectionButton in section.buttons" :key="sectionButton.id">
+              <primary-button :label="sectionButton" button-type="footerButton" />
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -51,6 +53,17 @@ export default {
 
 <style scoped>
 
+  .footer {
+    width: 100%;
+    border-top: 1px solid #efefef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
+
   .footer-wrapper {
     width: 100%;
     max-width: 1200px;
@@ -58,9 +71,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #efefef;
-    margin-top: 100px;
-    padding: 70px 30px 80px;
+    padding: 0 30px;
     box-sizing: border-box;
   }
 

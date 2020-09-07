@@ -105,7 +105,9 @@ export default {
   mounted() {
     this.playButtonTitle = this.playButtonTitle.toUpperCase()
     this.trialButtonLabel = this.trialButtonLabel.toUpperCase()
-  }
+    document.title = "Canny: Customer Feedback Management Tool"
+  },
+
 }
 </script>
 
@@ -115,7 +117,15 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f1f1f1;
+    background: #f8f8f8;
+  }
+
+  .header {
+    width: 100%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .header-wrapper {
@@ -124,10 +134,16 @@ export default {
     flex-direction: column;
     align-items: center;
     border-bottom: 1px solid #f1f1f1;
-    background: #ffffff;
     max-width: 1200px;
     padding: 0 30px;
     box-sizing: border-box;
+  }
+
+  .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .body-wrapper {
